@@ -1,0 +1,57 @@
+<!-- header -->
+<app-header></app-header>
+<!-- //header -->
+
+<!-- inner banner -->
+<div class="inner_banner layer" id="home">
+    <div class="container">
+        <div class="agileinfo-inner">
+            <h2 class="text-center text-white">
+                Course
+            </h2>
+        </div>
+    </div>
+</div>
+<!-- //inner banner -->
+<!-- breadcrumbs -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Course</li>
+    </ol>
+</nav>
+<!-- //breadcrumbs -->
+
+
+<!-- services -->
+<div class="team py-5">
+    <div class="container py-sm-3" *ngFor="let k of courseDetails">
+        <h3 class="heading text-capitalize mb-lg-5 mb-4"> {{k.Name}}</h3>
+        <div class="row agile-team-grids">
+            <div class="col-lg-4 col-sm-6 team-grid">
+                <div class="team-img">
+                    <img src="{{k.Pic}}" class="img-responsive" alt=" " style="height: 200px" />
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h4 style="font-family:serif;line-height: 1.7em">{{k.Des}}</h4>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <iframe [src]="k.Video|safe" style="height: 400px;width: 100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //services -->
+
+
+
+
+<!-- footer -->
+<app-footer></app-footer>
+<!-- footer -->

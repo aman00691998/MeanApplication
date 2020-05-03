@@ -1,0 +1,88 @@
+<header>
+    <div class="container">
+        <!-- top header -->
+        <section class="row top_header pt-3">
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6 buttons">
+                <button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+                    Logout
+                </button>
+            </div>
+        </section>
+        <!-- top header -->
+
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+            <!-- logo -->
+            <h1>
+                <a class="navbar-brand" href="index.html"> <i class="fas fa-desktop"></i> TechCluster
+                </a>
+            </h1>
+            <!-- //logo -->
+            <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- main nav -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-lg-auto text-center">
+                    <li class="nav-item active  mr-lg-3">
+                        <a class="nav-link" routerLink="/user">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mr-lg-3">
+                        <a class="nav-link" routerLink="/view" routerLinkActive="active">Courses</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+                    </li>
+
+                    <!-- search --->
+                    <div class="search-bar-agileits">
+                        <div class="cd-main-header">
+                            <ul class="cd-header-buttons">
+                                <li>
+                                    <a class="cd-search-trigger" href="#cd-search"> <span></span></a>
+                                </li>
+                            </ul>
+                            <!-- cd-header-buttons -->
+                        </div>
+                        <div id="cd-search" class="cd-search">
+                            <form action="#" method="post">
+                                <input name="Search" type="search" placeholder="Click enter after typing...">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- search --->
+                </ul>
+            </div>
+            <!-- //main nav -->
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Logout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are You Sure To Logout?
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" value="Not Now" data-dismiss="modal">
+                <a class="btn btn-danger" href="" data-dismiss="modal" [routerLink]="['/home']"> Sign Out</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register modal -->

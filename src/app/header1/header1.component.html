@@ -1,0 +1,127 @@
+<header>
+    <div class="container">
+        <!-- top header -->
+        <section class="row top_header pt-3">
+            <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6 buttons">
+                <p><i class="fas mr-1 fa-phone"></i> +91 7054666583</p>
+                <button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-capitalize mr-2" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+                    Login
+
+                </button>
+                <button type="button" class="btn btn-info1 btn-lg-block w3ls-btn1 px-4 text-capitalize" data-toggle="modal" aria-pressed="false" data-target="#exampleModal1">
+                    Register
+                </button>
+            </div>
+        </section>
+        <!-- top header -->
+
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg navbar-light py-sm-4 py-2">
+            <!-- logo -->
+            <h1>
+                <a class="navbar-brand" href="index.html"> <i class="fas fa-desktop"></i> TechCluster
+                </a>
+            </h1>
+            <!-- //logo -->
+            <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- main nav -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-lg-auto text-center">
+                    <li class="nav-item active  mr-lg-3">
+                        <a class="nav-link" routerLink="/home">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mr-lg-3">
+                        <a class="nav-link" routerLink="/services" routerLinkActive="active">Services</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- //main nav -->
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+<!-- Login modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #ld="ngForm" method="post" class="p-3">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">User Name</label>
+                        <input type="email" class="form-control" placeholder="User Name" name="Email" ngModel id="recipient-name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name1" class="col-form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="Pass" ngModel id="recipient-name1" required="">
+                    </div>
+                    <div class="right-w3l mt-4 mb-3">
+                        <input [disabled]="!ld.form.valid" type="reset" class="form-control" (click)="signin(ld)" value="Login">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Login modal -->
+
+<!-- Register modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="exampleModalLabel1">Register Here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #ud="ngForm" class="p-3">
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-primary">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Full Name" name="Name" ngModel #n="ngModel" id="recipient-name2" required="" [ngClass]="{'is-valid':n?.valid && n?.touched,'is-invalid':!n?.valid && n?.touched}">
+                        <small class="text-danger" *ngIf="n?.errors?.required && n?.touched">Name Is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-primary">Email id</label>
+                        <input type="email" class="form-control" placeholder="Email id" name="Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" ngModel #e="ngModel" id="recipient-name4" required="" [ngClass]="{'is-valid':e?.valid && e?.touched,'is-invalid':!e?.valid && e?.touched}">
+                        <small class="text-danger" *ngIf="e?.errors?.required && e?.touched">Email Is Required</small>
+                        <small class="text-danger" *ngIf="e?.errors?.pattern && e?.touched">Email Is Not valid</small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-primary">Mobile Number</label>
+                        <input type="text" class="form-control" placeholder="Mobile Number" name="Mobile" ngModel #m="ngModel" id="recipient-name5" required="" [ngClass]="{'is-valid':m?.valid && m?.touched,'is-invalid':!m?.valid && m?.touched}">
+                        <small class="text-danger" *ngIf="m?.errors?.required && m?.touched">Mobile Number Is
+                            Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name1" class="text-primary">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="Pass" ngModel #p="ngModel" id="recipient-name6" required="" [ngClass]="{'is-valid':p?.valid && p?.touched,'is-invalid':!p?.valid && p?.touched}">
+                        <small class="text-danger" *ngIf="p?.errors?.required && p?.touched">Password Is
+                            Required</small>
+                    </div>
+                    <div class="right-w3l mt-4 mb-3">
+                        <input [disabled]="!ud.form.valid" type="submit" class="form-control" (click)="signup(ud)" value="Create account">
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register modal -->
